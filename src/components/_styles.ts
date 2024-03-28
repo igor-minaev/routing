@@ -18,6 +18,13 @@ const NavWrapper = styled.div`
   }
 `
 
+const ImgWrapper = styled.img`
+  width: 250px;
+  height: 150px;
+  object-fit: cover
+`
+
 export const S = {
-    NavWrapper
+    NavWrapper,
+    ImgWrapper
 }
