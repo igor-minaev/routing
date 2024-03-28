@@ -1,10 +1,16 @@
 import React from 'react';
 import {useParams} from 'react-router-dom';
-import {audiArr} from './Audi';
+import {CarItem} from './Audi';
 
-export const Car = () => {
+
+type CarType = {
+    cars: CarItem[]
+}
+
+export const Car: React.FC<CarType> = ({cars}) => {
     const params = useParams()
-    const currentCar = audiArr.find(el => el.id === Number(params.id))
+    console.log(params)
+    const currentCar = cars.find(el => el.id === Number(params.id))
     return (
         <div style={{textAlign: 'center'}}>
             {currentCar

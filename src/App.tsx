@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './components/Site.module.css'
 import {Navigate, NavLink, Route, Routes} from 'react-router-dom';
-import {Audi} from './components/Audi';
-import {Mercedes} from './components/Mercedes';
-import {Kia} from './components/Kia';
+import {Audi, audiArr} from './components/Audi';
+import {Mercedes, mercedesArr} from './components/Mercedes';
+import {Kia, kiaArr} from './components/Kia';
 import {Error404} from './components/Error404';
 import {S} from './components/_styles';
 import {Car} from './components/Car';
@@ -51,7 +51,9 @@ function App() {
                         <Route path={PATH.PAGE2} element={<Kia/>}/>
                         <Route path={PATH.PAGE3} element={<Mercedes/>}/>
                         <Route path={PATH.ERROR} element={<Error404/>}/>
-                        <Route path={`${PATH.PAGE1}/:id`} element={<Car/>}/>
+                        <Route path={`${PATH.PAGE1}/:id`} element={<Car cars={audiArr}/>}/>
+                        <Route path={`${PATH.PAGE2}/:id`} element={<Car cars={kiaArr}/>}/>
+                        <Route path={`${PATH.PAGE3}/:id`} element={<Car cars={mercedesArr}/>}/>
                         <Route path={'*'} element={<Navigate to={PATH.ERROR}/>}/>
                     </Routes>
                 </div>
