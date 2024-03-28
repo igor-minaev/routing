@@ -28,3 +28,13 @@
     font-size: 30px;
     padding: 10px;
 }
+
+.navLink{
+    text-decoration: none;
+    color: #6ac291;
+}
+
+.nav a.active{
+    text-decoration: underline;
+    color: #054b23;
+}

@@ -13,13 +13,14 @@ function App() {
             <div className={s.body}>
                 <div className={s.nav}>
                     <div>
-                        <NavLink to={'/audi'}>Audi</NavLink>
+                        <NavLink to={'/audi'} className={({isActive}) => isActive ? s.active : s.navLink}>Audi</NavLink>
                     </div>
                     <div>
-                        <NavLink to={'/kia'}>Kia</NavLink>
+                        <NavLink to={'/kia'} className={({isActive}) => isActive ? s.active : s.navLink}>Kia</NavLink>
                     </div>
                     <div>
-                        <NavLink to={'/mercedes'}>Mercedes</NavLink>
+                        <NavLink to={'/mercedes'}
+                                 className={({isActive}) => isActive ? s.active : s.navLink}>Mercedes</NavLink>
                     </div>
                 </div>
                 <div className={s.content}>
