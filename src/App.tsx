@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './components/Site.module.css'
-import {Navigate, Route, Routes} from 'react-router-dom';
+import {Navigate, NavLink, Route, Routes} from 'react-router-dom';
 import {Audi} from './components/Audi';
 import {Mercedes} from './components/Mercedes';
 import {Kia} from './components/Kia';
@@ -11,7 +11,17 @@ function App() {
         <div className="App">
             <header className={s.header}>Header</header>
             <div className={s.body}>
-                <div className={s.nav}>Nav</div>
+                <div className={s.nav}>
+                    <div>
+                        <NavLink to={'/audi'}>Audi</NavLink>
+                    </div>
+                    <div>
+                        <NavLink to={'/kia'}>Kia</NavLink>
+                    </div>
+                    <div>
+                        <NavLink to={'/mercedes'}>Mercedes</NavLink>
+                    </div>
+                </div>
                 <div className={s.content}>
                     <Routes>
                         <Route path={'/'} element={<Navigate to={'/audi'}/>}/>
