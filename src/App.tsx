@@ -5,13 +5,15 @@ import {Audi} from './components/Audi';
 import {Mercedes} from './components/Mercedes';
 import {Kia} from './components/Kia';
 import {Error404} from './components/Error404';
+import { S } from './components/_styles';
+
 
 function App() {
     return (
         <div className="App">
             <header className={s.header}>Header</header>
             <div className={s.body}>
-                <div className={s.nav}>
+                {/* <div className={s.nav}>
                     <div>
                         <NavLink to={'/audi'} className={({isActive}) => isActive ? s.active : s.navLink}>Audi</NavLink>
                     </div>
@@ -22,6 +24,17 @@ function App() {
                         <NavLink to={'/mercedes'}
                                  className={({isActive}) => isActive ? s.active : s.navLink}>Mercedes</NavLink>
                     </div>
+                </div>*/}
+                <div className={s.nav}>
+                    <S.NavWrapper>
+                        <NavLink to={'/audi'}>Audi</NavLink>
+                    </S.NavWrapper>
+                    <S.NavWrapper>
+                        <NavLink to={'/kia'}>Kia</NavLink>
+                    </S.NavWrapper>
+                    <S.NavWrapper>
+                        <NavLink to={'/mercedes'}>Mercedes</NavLink>
+                    </S.NavWrapper>
                 </div>
                 <div className={s.content}>
                     <Routes>
@@ -40,3 +53,6 @@ function App() {
 }
 
 export default App;
+
+
+
