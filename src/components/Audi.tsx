@@ -6,7 +6,7 @@ import audiCar3 from '../assets/audi/a8.jpg'
 import {Link} from 'react-router-dom';
 import { S } from './_styles';
 
-export type audiItem = {
+export type AudiItem = {
     id: number,
     model: string,
     price: number,
@@ -14,7 +14,7 @@ export type audiItem = {
     picture: string
 }
 
-export const audiArr: audiItem[] = [
+export const audiArr: AudiItem[] = [
     {
         id: 1,
         model: 'A4',

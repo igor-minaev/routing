@@ -5,7 +5,15 @@ import {Audi} from './components/Audi';
 import {Mercedes} from './components/Mercedes';
 import {Kia} from './components/Kia';
 import {Error404} from './components/Error404';
-import { S } from './components/_styles';
+import {S} from './components/_styles';
+import {Car} from './components/Car';
+
+export const PATH = {
+    PAGE1: '/audi',
+    PAGE2: '/kia',
+    PAGE3: '/mercedes',
+    ERROR: '/error404'
+} as const
 
 
 function App() {
@@ -27,23 +35,24 @@ function App() {
                 </div>*/}
                 <div className={s.nav}>
                     <S.NavWrapper>
-                        <NavLink to={'/audi'}>Audi</NavLink>
+                        <NavLink to={PATH.PAGE1}>Audi</NavLink>
                     </S.NavWrapper>
                     <S.NavWrapper>
-                        <NavLink to={'/kia'}>Kia</NavLink>
+                        <NavLink to={PATH.PAGE2}>Kia</NavLink>
                     </S.NavWrapper>
                     <S.NavWrapper>
-                        <NavLink to={'/mercedes'}>Mercedes</NavLink>
+                        <NavLink to={PATH.PAGE3}>Mercedes</NavLink>
                     </S.NavWrapper>
                 </div>
                 <div className={s.content}>
                     <Routes>
-                        <Route path={'/'} element={<Navigate to={'/audi'}/>}/>
-                        <Route path={'/audi'} element={<Audi/>}/>
-                        <Route path={'/kia'} element={<Kia/>}/>
-                        <Route path={'/mercedes'} element={<Mercedes/>}/>
-                        <Route path={'/error404'} element={<Error404/>}/>
-                        <Route path={'*'} element={<Navigate to={'/error404'}/>}/>
+                        <Route path={'/'} element={<Navigate to={PATH.PAGE1}/>}/>
+                        <Route path={PATH.PAGE1} element={<Audi/>}/>
+                        <Route path={PATH.PAGE2} element={<Kia/>}/>
+                        <Route path={PATH.PAGE3} element={<Mercedes/>}/>
+                        <Route path={PATH.ERROR} element={<Error404/>}/>
+                        <Route path={`${PATH.PAGE1}/:id`} element={<Car/>}/>
+                        <Route path={'*'} element={<Navigate to={PATH.ERROR}/>}/>
                     </Routes>
                 </div>
             </div>
