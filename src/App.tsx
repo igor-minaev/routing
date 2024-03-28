@@ -1,14 +1,15 @@
 import React from 'react';
-import './App.css';
+import s from './components/Site.module.css'
 
 function App() {
     return (
-        <div>
-            <header className="App-header">Header</header>
-            <div className="body">
-                <div className="nav">Nav</div>
-                <div className="content">Content</div>
+        <div className='App'>
+            <header className={s.header}>Header</header>
+            <div className={s.body}>
+                <div className={s.nav}>Nav</div>
+                <div className={s.content}>Content</div>
             </div>
+            <footer className={s.footer}>Footer</footer>
         </div>
     );
 }
