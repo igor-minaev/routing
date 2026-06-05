@@ -1,4 +1,4 @@
-import {Navigate, Route, Routes} from "react-router"
+import {Navigate, NavLink, Route, Routes} from "react-router"
 import './App.css'
 import styles from './components/Site.module.css'
 import {Adidas} from "./components/Adidas";
@@ -13,7 +13,12 @@ function App() {
         <>
             <header className={styles.header}>SHOES</header>
             <div className={styles.body}>
-                <nav className={styles.nav}>Navigation</nav>
+                <nav className={styles.nav}>
+                    <div><NavLink to='/page1'>Adidas</NavLink></div>
+                    <div><NavLink to='/page2'>Puma</NavLink></div>
+                    <div><NavLink to='/page3'>Reebok</NavLink></div>
+                    <div><NavLink to='/page4'>Asics</NavLink></div>
+                </nav>
                 <div className={styles.content}>
                     <Routes>
                         <Route path='/' element={<Navigate to='/page1'/>}/>
