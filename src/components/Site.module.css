@@ -1,0 +1,38 @@
+.header {
+    width: 100%;
+    min-height: 50px;
+    background-color: #80ca95;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body {
+    display: flex;
+    min-height: 480px;
+}
+
+.nav {
+    width: 30%;
+    padding: 20px;
+}
+
+.content {
+    background-color: #919191;
+    width: 70%;
+    padding: 20px;
+    color: #163143;
+}
+
+.footer {
+    width: 100%;
+    min-height: 50px;
+    background-color: #80ca95;
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
