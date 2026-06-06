@@ -6,49 +6,43 @@ import {Puma} from "./components/Puma";
 import {Reebok} from "./components/Reebok";
 import {Asics} from "./components/Asics";
 import {Error404} from "./components/Error404";
-import styled from "styled-components";
+import {S} from './components/_styles'
+
+const PATH = {
+    page1: '/page1',
+    page2: '/page2',
+    page3: '/page3',
+    page4: '/page4',
+    error404: '/error404'
+}
 
 function App() {
-
     return (
         <>
             <header className={styles.header}>SHOES</header>
             <div className={styles.body}>
                 <nav className={styles.nav}>
-                    {/*<div>*/}
-                    {/*    <NavLink className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink} to='/page1'>Adidas</NavLink>*/}
-                    {/*</div>*/}
-                    {/*<div>*/}
-                    {/*    <NavLink className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink} to='/page2'>Puma</NavLink>*/}
-                    {/*</div>*/}
-                    {/*<div>*/}
-                    {/*    <NavLink className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink} to='/page3'>Reebok</NavLink>*/}
-                    {/*</div>*/}
-                    {/*<div>*/}
-                    {/*    <NavLink className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink} to='/page4'>Asics</NavLink>*/}
-                    {/*</div>*/}
-                    <NavWrapper>
-                        <NavLink to='/page1'>Adidas</NavLink>
-                    </NavWrapper>
-                    <NavWrapper>
-                        <NavLink to='/page2'>Puma</NavLink>
-                    </NavWrapper>
-                    <NavWrapper>
-                        <NavLink to='/page3'>Reebok</NavLink>
-                    </NavWrapper>
-                    <NavWrapper>
-                        <NavLink to='/page4'>Asics</NavLink>
-                    </NavWrapper>
+                    <S.NavWrapper>
+                        <NavLink to={PATH.page1}>Adidas</NavLink>
+                    </S.NavWrapper>
+                    <S.NavWrapper>
+                        <NavLink to={PATH.page2}>Puma</NavLink>
+                    </S.NavWrapper>
+                    <S.NavWrapper>
+                        <NavLink to={PATH.page3}>Reebok</NavLink>
+                    </S.NavWrapper>
+                    <S.NavWrapper>
+                        <NavLink to={PATH.page4}>Asics</NavLink>
+                    </S.NavWrapper>
                 </nav>
                 <div className={styles.content}>
                     <Routes>
-                        <Route path='/' element={<Navigate to='/page1'/>}/>
-                        <Route path='/page1' element={<Adidas/>}/>
-                        <Route path='/page2' element={<Puma/>}/>
-                        <Route path='/page3' element={<Reebok/>}/>
-                        <Route path='/page4' element={<Asics/>}/>
-                        <Route path='/error404' element={<Error404/>}/>
-                        <Route path='/*' element={<Navigate to='/error404'/>}/>
+                        <Route path='/' element={<Navigate to={PATH.page1}/>}/>
+                        <Route path={PATH.page1} element={<Adidas/>}/>
+                        <Route path={PATH.page2} element={<Puma/>}/>
+                        <Route path={PATH.page3} element={<Reebok/>}/>
+                        <Route path={PATH.page4} element={<Asics/>}/>
+                        <Route path='/*' element={<Error404/>}/>
                     </Routes>
                 </div>
             </div>
@@ -56,24 +50,5 @@ function App() {
         </>
     )
 }
-
-const NavWrapper = styled.div`
-    margin-left: 10px;
-    font-size: 2rem;
-
-    & > a {
-        text-decoration: none;
-        color: #2c4939;;
-    }
-
-    & > a.active {
-        text-decoration: underline;
-        color: #45c17e;
-    }
-
-    & > a:hover {
-        color: #048552;
-    }
-`
 
 export default App
