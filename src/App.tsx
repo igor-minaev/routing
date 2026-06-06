@@ -14,10 +14,18 @@ function App() {
             <header className={styles.header}>SHOES</header>
             <div className={styles.body}>
                 <nav className={styles.nav}>
-                    <div><NavLink to='/page1'>Adidas</NavLink></div>
-                    <div><NavLink to='/page2'>Puma</NavLink></div>
-                    <div><NavLink to='/page3'>Reebok</NavLink></div>
-                    <div><NavLink to='/page4'>Asics</NavLink></div>
+                    <div>
+                        <NavLink className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink} to='/page1'>Adidas</NavLink>
+                    </div>
+                    <div>
+                        <NavLink className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink} to='/page2'>Puma</NavLink>
+                    </div>
+                    <div>
+                        <NavLink className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink} to='/page3'>Reebok</NavLink>
+                    </div>
+                    <div>
+                        <NavLink className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink} to='/page4'>Asics</NavLink>
+                    </div>
                 </nav>
                 <div className={styles.content}>
                     <Routes>
