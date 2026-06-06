@@ -7,14 +7,15 @@ import {Reebok} from "./components/Reebok";
 import {Asics} from "./components/Asics";
 import {Error404} from "./components/Error404";
 import {S} from './components/_styles'
+import {Model} from "./components/Model";
 
 const PATH = {
-    page1: '/page1',
-    page2: '/page2',
-    page3: '/page3',
-    page4: '/page4',
+    adidas: '/adidas',
+    puma: '/puma',
+    reebok: '/reebok',
+    asics: '/asics',
     error404: '/error404'
-}
+} as const
 
 function App() {
     return (
@@ -23,25 +24,26 @@ function App() {
             <div className={styles.body}>
                 <nav className={styles.nav}>
                     <S.NavWrapper>
-                        <NavLink to={PATH.page1}>Adidas</NavLink>
+                        <NavLink to={PATH.adidas}>Adidas</NavLink>
                     </S.NavWrapper>
                     <S.NavWrapper>
-                        <NavLink to={PATH.page2}>Puma</NavLink>
+                        <NavLink to={PATH.puma}>Puma</NavLink>
                     </S.NavWrapper>
                     <S.NavWrapper>
-                        <NavLink to={PATH.page3}>Reebok</NavLink>
+                        <NavLink to={PATH.reebok}>Reebok</NavLink>
                     </S.NavWrapper>
                     <S.NavWrapper>
-                        <NavLink to={PATH.page4}>Asics</NavLink>
+                        <NavLink to={PATH.asics}>Asics</NavLink>
                     </S.NavWrapper>
                 </nav>
                 <div className={styles.content}>
                     <Routes>
-                        <Route path='/' element={<Navigate to={PATH.page1}/>}/>
-                        <Route path={PATH.page1} element={<Adidas/>}/>
-                        <Route path={PATH.page2} element={<Puma/>}/>
-                        <Route path={PATH.page3} element={<Reebok/>}/>
-                        <Route path={PATH.page4} element={<Asics/>}/>
+                        <Route path='/' element={<Navigate to={PATH.adidas}/>}/>
+                        <Route path={PATH.adidas} element={<Adidas/>}/>
+                        <Route path={PATH.puma} element={<Puma/>}/>
+                        <Route path={PATH.reebok} element={<Reebok/>}/>
+                        <Route path={PATH.asics} element={<Asics/>}/>
+                        <Route path={'/adidas/:id'} element={<Model/>}/>
                         <Route path='/*' element={<Error404/>}/>
                     </Routes>
                 </div>
